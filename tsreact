@@ -1,0 +1,11 @@
+#!/bin/bash
+T=$1
+mkdir -p $T/src/components
+mkdir -p $T/dist
+cd $T && \
+	tsc --init && \
+	typings init && \
+	npm init && \
+		npm i --save react react-dom @types/react @types/react-dom && \
+		npm i --save-dev jest-cli && \
+		npm i --save immutable && typings install --global dt~immutable

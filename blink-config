@@ -1,0 +1,2 @@
+#!/bin/bash
+git clone https://gist.github.com/damienstanton/d5d2b9bd2830fd4ffd48c45837157e69 set && cd set && chmod +x install.sh && ./install.sh

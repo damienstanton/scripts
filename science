@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "⏳  installing Python 3.6 environment..."
+python3.6 -m venv env && source env/bin/activate && \
+	echo "🤖  installing TensorFlow"
+	pip3 install $TF_BINARY_URL | pv -l -p -s 13 | wc -l && \
+	echo "📊  installing matplotlib, numpy and other scientific modules"
+	pip3 install $PYSTACK | pv -l -p -s 88 | wc -l && \
+echo "✅  done."
+echo "📓  launching Jupyter"
+source env/bin/activate && jupyter notebook && deactivate && \
+	rm -rf env/
+echo "✅  environment exited cleanly."

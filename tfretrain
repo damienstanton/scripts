@@ -1,0 +1,14 @@
+#!/bin/bash
+# tfretrain modifies the inception v3 model by removing the top layer,
+# then training on the directory of new images specified.
+# Usage:
+#     tfretrain <dir containing images>
+IMGDIR=$1
+cd "$GOPATH/src/github.com/tensorflow/tensorflow"
+echo "Compiling TensorFlow for image retraining. This can take tens of minutes, so grab a coffee/beer..."
+echo
+bazel build -c opt --copt=-mavx tensorflow/examples/image_retraining:retrain
+echo "Done. Training on $IMGDIR"
+echo
+bazel-bin/tensorflow/examples/image_retraining/retrain --image_dir $IMGDIR
+echo "Retraining is complete."
