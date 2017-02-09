@@ -28,7 +28,7 @@ func TestInit(t *testing.T) {
 	if err != nil {
 		t.Errorf("unexpected error: %v", err)
 	}
-	if h == false {
+	if !h {
 		t.Fatal("init test failed")
 	}
 }
@@ -43,6 +43,12 @@ vendor/*/*
 *.o
 *.so
 IGNORE
+
+cat <<LICENSE>> LICENSE
+Copyright (c) 2017 DK Stanton Consulting, Inc. DBA Blink Analytics.
+All Rights Reserved.
+Unauthorized copying of this software, via any medium, is strictly prohibited.
+LICENSE
 
 govendor init
 go test -v -cover && go build -o bin/$T && \
