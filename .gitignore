@@ -1,0 +1,8 @@
+*.DS_Store
+*.swp
+*.o
+*.so
+.vscode/
+vendor/*/*
+env/
+bin/

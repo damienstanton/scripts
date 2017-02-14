@@ -1,0 +1,14 @@
+#!/bin/bash
+echo "🌍 stopping all databases..."
+brew services stop arangodb && \
+echo "✅  DB: Multimodal OK"
+brew services stop docker-machine && \
+echo "✅  INT: Containers OK"
+brew services stop elasticsearch && \
+echo "✅  IR: Enterprise OK"
+brew services stop influxdb && \
+echo "✅  DB: TS OK"
+brew services stop postgresql && \
+echo "✅  SQL OK"
+brew services stop solr
+echo "✅  IR: OSS OK"
