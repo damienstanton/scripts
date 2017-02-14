@@ -4,7 +4,7 @@
 # Usage:
 #     tfretrain <dir containing images>
 IMGDIR=$1
-cd "$GOPATH/src/github.com/tensorflow/tensorflow"
+cd "$GOPATH/src/github.com/damienstanton/tensorflow"
 echo "Compiling TensorFlow for image retraining. This can take tens of minutes, so grab a coffee/beer..."
 echo
 bazel build -c opt --copt=-mavx tensorflow/examples/image_retraining:retrain
