@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "🌍 stopping all databases..."
+echo "🌍  stopping all databases..."
 brew services stop arangodb && \
 echo "✅  DB: Multimodal OK"
 brew services stop docker-machine && \
