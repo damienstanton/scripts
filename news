@@ -6,17 +6,17 @@ cat <<SETUP>> $1.sh
 # pretty logging
 # ---
 # info
-╔════╗
-║ 🚀  ║
-╚════╝
+echo "╔════╗"
+echo "║ 🚀  ║"
+echo "╚════╝"
 # pass
-╔════╗
-║ ✅  ║
-╚════╝
+echo "╔════╗"
+echo "║ ✅  ║"
+echo "╚════╝"
 # fail
-╔════╗
-║ ❌  ║
-╚════╝
+echo "╔════╗"
+echo "║ ❌  ║"
+echo "╚════╝"
 
 # vars
 # ---
@@ -26,5 +26,6 @@ cat <<SETUP>> $1.sh
 
 # commands
 # ---
+
 SETUP
 vi $1.sh
