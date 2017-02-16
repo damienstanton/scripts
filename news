@@ -1,4 +1,30 @@
 #!/bin/bash
-echo '#!/bin/bash' > $1.sh \
-	&& chmod +x $1.sh \
-	&& vi $1.sh
+touch $1.sh && chmod +x $1.sh && \
+cat <<SETUP>> $1.sh
+#!/bin/bash
+
+# pretty logging
+# ---
+# info
+╔════╗
+║ 🚀  ║
+╚════╝
+# pass
+╔════╗
+║ ✅  ║
+╚════╝
+# fail
+╔════╗
+║ ❌  ║
+╚════╝
+
+# vars
+# ---
+
+# tests
+# ---
+
+# commands
+# ---
+SETUP
+vi $1.sh
