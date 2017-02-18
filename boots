@@ -1,7 +1,5 @@
 #!/bin/bash
 echo "🌍  starting all databases..."
-brew services start arangodb && \
-echo "✅  DB: Multimodal OK"
 brew services start docker-machine && \
 echo "✅  INT: Containers OK"
 brew services start elasticsearch && \
