@@ -50,7 +50,7 @@ All Rights Reserved.
 Unauthorized copying of this software, via any medium, is strictly prohibited.
 LICENSE
 
-govendor init
+dep init
 go test -v -cover && go build -o bin/$T && \
 echo "Go project $T setup complete. cd to $T/"
 echo
