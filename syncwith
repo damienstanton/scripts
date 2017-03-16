@@ -1,0 +1,8 @@
+#!/bin/bash
+# Usage:
+#  syncwith myname/mycoolrepo
+git remote add up https://github.com/$1
+git fetch up master \
+	&& git merge up/master \
+	&& git push \
+	&& echo "👌"
