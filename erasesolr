@@ -1,0 +1,3 @@
+#!/bin/bash
+CORE=<redacted>
+http://localhost:8983/solr/$CORE/update?commit=true&stream.body=%3Cdelete%3E%3Cquery%3E*%3A*%3C/query%3E%3C/delete%3E
