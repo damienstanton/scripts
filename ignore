@@ -10,6 +10,9 @@ node_modules/
 .vscode/
 .idea/
 vendor/*/*
+/target/
+Cargo.lock
+**/*.rs.bak
 I
 
 name=${PWD##*/}
