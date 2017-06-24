@@ -1,0 +1,16 @@
+#!/bin/bash
+code --install-extension Compulim.vscode-clock
+code --install-extension LawrenceGrant.cql
+code --install-extension andradei.minimal-colors
+code --install-extension bungcip.better-toml
+code --install-extension cazzar09.Gradle
+code --install-extension codezombiech.gitignore
+code --install-extension donjayamanne.python
+code --install-extension jack-pallot.vscode-theme-neat
+code --install-extension lukehoban.Go
+code --install-extension ms-vscode.cpptools
+code --install-extension redhat.java
+code --install-extension shyykoserhiy.sockscode-vscode
+code --install-extension vscodevim.vim
+code --install-extension wayou.vscode-todo-highlight
+code --install-extension zxh404.vscode-proto3

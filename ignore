@@ -10,7 +10,7 @@ node_modules/
 .vscode/
 .idea/
 vendor/*/*
-/target/
+target/
 Cargo.lock
 **/*.rs.bak
 I
