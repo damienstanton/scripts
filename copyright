@@ -11,5 +11,7 @@ LIC
 
 cat <<CPR>> README.md
 
-© $(date +%Y) $1 $2 $3 $4 $5. See LICENSE for details.
+© $(date +%Y) $1 $2 $3 $4 $5
+
+See LICENSE for details.
 CPR
