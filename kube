@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /Users/damien/go/src/code.wirelessregistry.com/signal-graph/data_model
+cd $GOPATH && cd ../data_model
 
 if [ $1 == "start" ]
 then
