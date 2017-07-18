@@ -10,3 +10,7 @@ if [ $1 == "stop" ]
 then
 	docker-compose kill && minikube stop
 fi
+if [ $1 == "cleanup" ]
+then
+    docker-compose rm -v && minikube delete
+fi
