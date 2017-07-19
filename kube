@@ -4,13 +4,12 @@ cd $GOPATH && cd ../data_model
 if [ $1 == "start" ]
 then
 	docker-compose up -d \
-        && minikube start --insecure-registry "10.0.2.2:5000" --memory 6144
+        && minikube start --insecure-registry "10.0.2.2:5000" --memory 6144 \
+		&& ./init_kubernetes.sh \
+		&& cd ../backend && make && ./scripts/start-twr.sh
 fi
 if [ $1 == "stop" ]
 then
-	docker-compose kill && minikube stop
-fi
-if [ $1 == "cleanup" ]
-then
-    docker-compose rm -v && minikube delete
+	docker-compose kill && minikube stop \
+		&& docker-compose rm -v && minikube delete
 fi
