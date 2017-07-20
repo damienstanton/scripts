@@ -11,5 +11,6 @@ fi
 if [ $1 == "stop" ]
 then
 	docker-compose kill && minikube stop \
+		&& cd ../backend && ./scripts/stop-twr.sh \
 		&& docker-compose rm -v && minikube delete
 fi
