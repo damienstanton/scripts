@@ -1,10 +1,12 @@
 #!/bin/bash
-if [ $1 == "stop" ]; then
+if [[ $1 == "stop" ]]; then
 	cd $GOPATH && cd ../data_model \
 		&& docker-compose kill \
 		&& docker-compose rm -v \
 		&& minikube stop \
 		&& minikube delete
 else
-	minikube start --insecure-registry "10.0.2.2:5000" --memory 6144
+	cd $GOPATH && cd ../data_model \
+		&& minikube start --insecure-registry "10.0.2.2:5000" --memory 6144 \
+		&& ./init_kubernetes.sh
 fi
