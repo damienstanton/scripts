@@ -3,8 +3,8 @@ backuplog="/usr/local/var/log/backup.log"
 attached=$(df | awk '{print $NF}' | grep -Ex "/Volumes/ColdStorage") 
 
 if [[ $attached == "/Volumes/ColdStorage" ]]; then
-	echo "Last backup taken $(date)" >> $backuplog
 	restic backup $HOME >> $backuplog
+	echo "Last backup taken $(date)" >> $backuplog
 else
 	echo "Backup drive not attached. Skipping..." >> $backuplog
 fi
