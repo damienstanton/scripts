@@ -1,6 +1,5 @@
 #!/bin/bash
 
-code --install-extension Compulim.vscode-clock &&
 code --install-extension LawrenceGrant.cql &&
 code --install-extension Rubymaniac.vscode-html-to-elm &&
 code --install-extension UCL.haskelly &&
@@ -9,6 +8,7 @@ code --install-extension bungcip.better-toml &&
 code --install-extension cazzar09.Gradle &&
 code --install-extension codezombiech.gitignore &&
 code --install-extension donjayamanne.python &&
+code --install-extension goessner.mdmath &&
 code --install-extension jack-pallot.vscode-theme-neat &&
 code --install-extension justusadam.language-haskell &&
 code --install-extension kalitaalexey.vscode-rust &&
@@ -16,6 +16,7 @@ code --install-extension lukehoban.Go &&
 code --install-extension ms-vscode.cpptools &&
 code --install-extension nwolverson.ide-purescript &&
 code --install-extension nwolverson.language-purescript &&
+code --install-extension oijaz.unicode-latex &&
 code --install-extension redhat.java &&
 code --install-extension sbrink.elm &&
 code --install-extension shyykoserhiy.sockscode-vscode &&
