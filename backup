@@ -1,9 +1,10 @@
 #!/bin/bash
 backuplog="/usr/local/var/log/backup.log"
-attached=$(df | awk '{print $NF}' | grep -Ex "/Volumes/ColdStorage") 
+repo="/Volumes/ColdStorage"
+attached=$(df | awk '{print $NF}' | grep -Ex $repo) 
 
 if [[ $attached == "/Volumes/ColdStorage" ]]; then
-	/usr/local/bin/restic backup -e "*.vmdk" $HOME  >> $backuplog && echo "Last backup taken $(date)" >> $backuplog
+	/usr/local/bin/restic backup -e "*.vmdk" -r $repo /Users/damien  >> $backuplog && echo "Last backup taken $(date)" >> $backuplog
 else
 	echo "Backup drive not attached. Skipping..." >> $backuplog
 fi
