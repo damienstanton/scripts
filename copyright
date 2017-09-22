@@ -1,6 +1,6 @@
 #!/bin/bash
 cat <<LIC>> LICENSE
-Copyright $(date +%Y) $1 $2 $3 $4 $5
+Copyright $(date +%Y) $@
 
                                  Apache License
                            Version 2.0, January 2004
@@ -207,7 +207,7 @@ LIC
 
 cat <<CPR>> README.md
 
-© $(date +%Y) $1 $2 $3 $4 $5
+© $(date +%Y) $@
 
 See LICENSE for details.
 CPR
