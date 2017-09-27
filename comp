@@ -1,3 +1,0 @@
-#!/bin/bash
-cd $GOPATH && cd ../data_model \
-	&& docker-compose up

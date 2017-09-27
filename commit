@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Please type your commit message:"
+echo
+read INPUT
+git add -A \
+	&& git commit -m "$INPUT" \
+	&& git push
