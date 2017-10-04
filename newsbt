@@ -1,0 +1,29 @@
+#!/bin/bash
+WORKDIR=$1
+
+mkdir $WORKDIR && cd $WORKDIR
+
+echo "Creating new Scala project: $WORKDIR"
+
+cat <<SBTFILE>> build.sbt
+name := "$WORKDIR"
+scalaVersion in ThisBuild := "2.11.11"
+
+logBuffered in Test := false
+cancelable in Global := true
+
+libraryDependencies ++= Seq(
+	"org.scalactic" %% "scalactic" % "3.0.1",
+	"org.scalatest" %% "scalatest" % "3.0.1" % "test"
+)
+SBTFILE
+
+cat <<IGNORE>> .gitignore
+target/
+project/
+.ensime
+.cache/
+*.log
+IGNORE
+
+sbt ensimeConfig
