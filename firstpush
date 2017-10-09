@@ -1,2 +1,2 @@
 #!/bin/bash
-git add -A && git commit -m $1 && git push --set-upstream origin master
+git add -A && git commit -m $@ && git push --set-upstream origin master
