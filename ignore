@@ -16,9 +16,3 @@ Cargo.lock
 build/
 .gradle/
 I
-
-name=${PWD##*/}
-cat <<READ>> README.md
-# $name
-
-READ
