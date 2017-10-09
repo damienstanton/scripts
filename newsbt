@@ -22,6 +22,7 @@ cat <<IGNORE>> .gitignore
 target/
 project/
 .ensime
+.ensime_cache/
 .cache/
 *.log
 IGNORE
