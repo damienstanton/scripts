@@ -15,7 +15,8 @@ cancelable in Global := true
 
 libraryDependencies ++= Seq(
 	"org.scalactic" %% "scalactic" % "3.0.1",
-	"org.scalatest" %% "scalatest" % "3.0.1" % "test"
+	"org.scalatest" %% "scalatest" % "3.0.1" % "test",
+	"org.scalacheck" %% "scalacheck" % "1.13.4" % "test"
 )
 SBTFILE
 
@@ -27,5 +28,19 @@ project/
 .cache/
 *.log
 IGNORE
+
+mkdir -p src/main/scala
+mkdir -p src/test/scala
+
+cat <<SCALAFILE>> src/main/scala/App.scala
+
+package $WORKDIR
+
+object App {
+  def main(args: Array[String]) = {
+    println("$WORKDIR OK")
+  }
+}
+SCALAFILE
 
 sbt ensimeConfig
