@@ -44,7 +44,7 @@ echo "│ 🤔  Be sure to set the backend correctly at $HOME/.keras/keras.json 
 echo "│    Without setting keras.json, TensorFlow is the default.                                                     │"
 echo "└───────────────────────────────────────────────────────────────────────────────────────────────────────────────┘"
 echo "✅  Okay, now installing the rest of the stack..."
-pip3 install --upgrade flask glog jupyter matplotlib numpy protobuf pydot pyyaml scikit-image scipy scikit-learn
+pip3 install --upgrade flask glog jupyter matplotlib numpy protobuf pydot pyyaml scikit-image scipy scikit-learn pandas dask[complete]
 echo
 echo "✅  Setting up git..."
 git init
