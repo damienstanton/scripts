@@ -7,7 +7,7 @@ echo "Creating new Scala project: $WORKDIR"
 
 cat <<SBTFILE>> build.sbt
 name := "$WORKDIR"
-scalaVersion in ThisBuild := "2.11.11"
+scalaVersion in ThisBuild := "2.12.3"
 ensimeIgnoreMissingDirectories in ThisBuild := true
 
 logBuffered in Test := false
