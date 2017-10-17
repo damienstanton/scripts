@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 w=$1
+if [ -z "$1" ]; then
+    echo -n "Tell me the new project's name:"
+    read w
+fi
 cntk_url="https://cntk.ai/PythonWheel/CPU-Only/cntk-2.2-cp36-cp36m-linux_x86_64.whl"
 echo
 echo "🤖  Creating new deep learning project: $w"
