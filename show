@@ -1,0 +1,15 @@
+#!/bin/bash
+line_number=$1
+start=$(($line_number - 10))
+stop=$(($line_number + 10))
+
+case "$2" in
+	"in")
+		file_path=$3
+		;;
+	*)
+		echo "Usage: show <line_number> in <path_to_file>"
+		;;
+esac
+
+awk "NR >= $start && NR <= $stop + 10" $file_path
