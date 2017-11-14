@@ -210,4 +210,6 @@ cat <<CPR>> README.md
 © $(date +%Y) $@
 
 See LICENSE for details.
+
+[![donation](https://img.shields.io/badge/☕️_-Buy_me_coffee-green.svg)](https://paypal.me/damienstanton)
 CPR
