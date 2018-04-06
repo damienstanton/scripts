@@ -1,18 +1,13 @@
 #!/bin/bash
 cat <<I>> .gitignore
 *.DS_Store
-*.swp
-*.o
-*.so
 env/
 bin/
 node_modules/
 .vscode/
 .idea/
-vendor/*/*
+vendor/
 target/
-Cargo.lock
-**/*.rs.bak
 build/
 .gradle/
 I
