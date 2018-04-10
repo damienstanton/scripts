@@ -1,8 +1,5 @@
 *.DS_Store
-*.swp
-*.o
-*.so
 .vscode/
-vendor/*/*
+vendor/
 env/
 bin/
