@@ -1,0 +1,43 @@
+#!/bin/bash
+echo "Note: GOPATH is set to $GOPATH"
+cd $GOPATH/src/github.com/damienstanton
+echo "Creating new Go project in damienstanton/$1/"
+mkdir $1 && cd $1
+cat <<IGNORE>> .gitignore
+.vscode/
+vendor
+*.DS_Store
+IGNORE
+cat <<LIBFILE>> $1.go
+package $1
+
+// TODO: make something awesome.
+LIBFILE
+cat <<TESTFILE>> $1_test.go
+package $1
+
+import "testing"
+
+func TestBasic(t *testing.T) {
+     if 1 < 0 {
+     	t.Fatal("not possible")
+     }
+}
+TESTFILE
+mkdir cmd && cd cmd
+cat <<MAIN>> main.go
+package main
+
+import "fmt"
+
+func main() {
+     fmt.Println("OK")
+}
+MAIN
+cd ..
+dep init
+echo "Package and dep set up. Running test..."
+go test
+echo "Running main..."
+go run cmd/main.go
+echo "👍  "
