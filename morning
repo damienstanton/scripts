@@ -3,5 +3,4 @@
 echo "👋  Good morning!"
 echo
 echo "Let's back up all the things..."
-restic -r /Volumes/Storage/backups backup $HOME \
-       && echo "Backup complete."
+restic -r /Volumes/Storage/backups backup $HOME && echo "Backup complete."
