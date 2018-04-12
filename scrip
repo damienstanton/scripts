@@ -1,0 +1,2 @@
+#!/bin/bash
+echo '#!/bin/bash' > $1.sh && chmod +x $1.sh && $EDITOR $1.sh
