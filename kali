@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e
+docker run -it kalilinux/kali-linux-docker /bin/bash
