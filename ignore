@@ -10,4 +10,5 @@ vendor/
 target/
 build/
 .gradle/
+**/*.rs.bk
 I
