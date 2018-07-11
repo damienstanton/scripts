@@ -2,7 +2,8 @@
 cat <<I>> .gitignore
 *.DS_Store
 env/
-bin/
+bin/*
+!src/bin/
 node_modules/
 .vscode/
 .idea/
