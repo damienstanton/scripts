@@ -1,0 +1,26 @@
+#!/bin/bash
+project=$1
+cpp_ver=$2
+
+if [[ -z $2 ]]; then
+    cpp_ver="c++17"
+fi
+
+mkdir $project && cd $project
+cat <<MAKEFILE > Makefile
+name := \$(shell basename \$(CURDIR))
+
+default: build
+
+build:
+	@echo "Compiling..."
+	@g++ -pipe -O2 -std=$cpp_ver *.cpp -lm -o \$(name)
+	@echo "Done. Calling executable: \$(name)"
+	./\$(name)
+
+clean:
+	@echo "Deleting \$(name)"
+	@rm \$(name)
+MAKEFILE
+cd ..
+echo "Created project $project"
