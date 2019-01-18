@@ -14,6 +14,10 @@ test:
 .PHONY: release
 release:
 	@cargo build --release
+
+.PHONY: doc
+doc:
+    @cargo doc --no-deps --open
 MF
 
 cat <<TF>> .travis.yml
