@@ -1,0 +1,39 @@
+#!/bin/bash
+project=$1
+
+echo "Creating a new Rust project called $project"
+
+cargo new $@
+cd $project
+
+cat <<MF>> Makefile
+.PHONY: test
+test:
+	@cargo test -- --nocapture
+
+.PHONY: release
+release:
+	@cargo build --release
+MF
+
+cat <<TF>> .travis.yml
+
+language: rust
+rust:
+  - stable
+  - beta
+  - nightly
+
+matrix:
+  allow_failures:
+    - rust: nightly
+  fast_finish: true
+
+cache: cargo
+
+branches:
+    only:
+    - master
+TF
+
+echo "Done."
