@@ -1,0 +1,100 @@
+#!/bin/bash
+project=$1
+is_lib=$2
+
+if [[ -z $2 ]]; then
+    is_lib="--lib"
+fi
+
+mkdir $project && cd $project
+if [[ ! -d env ]]; then
+    echo "Creating virtual environment..."
+    python3 -m venv env
+fi
+
+cat <<REQS > requirements.txt
+pylint
+yapf
+jupyter
+jupyterlab
+requests
+flask
+pytest
+ipython
+REQS
+
+cat <<MK > Makefile
+.PHONY: setup
+setup:
+	@source env/bin/activate && pip install --upgrade pip && pip3 install --upgrade -r requirements.txt
+
+.PHONY: notebook
+notebook:
+	@source env/bin/activate && jupyter notebook
+
+.PHONY: dev
+dev:
+	@source env/bin/activate && code . # NOTE: replace this with your editor of choice
+
+.PHONY: repl
+repl:
+	@source env/bin/activate && ipython
+
+.PHONY: test
+test:
+	@source env/bin/activate && pytest
+MK
+
+cat <<IG > .gitignore
+env/
+.ipynb_checkpoints/
+*.pyc
+*.o
+IG
+
+function create_libfiles() {
+touch __init__.py
+cat <<LIB > lib.py
+"""
+$project is a Python library that... well, that's up to you.
+"""
+LIB
+cat <<LIBTEST > test_lib.py
+"""
+A simple smoke-test
+"""
+
+def inc(a: int) -> int:
+    """Increments an integral by one"""
+    return a + 1
+
+def test_inc():
+    """Confirm the incrementer works"""
+    assert inc(1) == 2
+LIBTEST
+}
+
+function create_appfiles() {
+cat <<MAIN > main.py
+"""
+$project is a Python app that... well, that's up to you.
+"""
+
+if __name__ == "__main__":
+    print("Hello, world!")
+MAIN
+}
+case $2 in
+    "--lib")
+        mkdir $project && cd $project
+        create_libfiles
+        echo "👍  Created library $project"
+        ;;
+    *)
+        create_appfiles
+        echo "👍  Created application $project"
+        ;;
+esac
+echo "Start exploring by the following commands:"
+echo "	cd $project; make setup && make repl"
+echo "See Makefile for other directives."
